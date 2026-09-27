@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harmonização Íntima Masculina | Clínica Analice Sousa — Manaíra, João Pessoa</title>
+  
+  <!-- Fontes Google (Inter / Plus Jakarta Sans para leitura sóbria e contemporânea) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              DEFAULT: '#16332D',
+              deep: '#102A23',
+            },
+            cream: '#F6F1E8',
+            sand: '#EBE2D2',
+            gold: {
+              DEFAULT: '#C18F3C',
+              deep: '#8F6222',
+            },
+            ink: '#1B302A',
+            muted: {
+              DEFAULT: '#66766F',
+              onDark: '#A9BDB6',
+            },
+            rule: '#E9E1D4',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          maxWidth: {
+            'content': '1280px',
+          },
+          borderRadius: {
+            'card': '16px',
+            'control': '10px',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Configurações globais e reset refinado */
+    body {
+      font-family: 'Plus Jakarta Sans', Inter, system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #16332D;
+      color: #1B302A;
+    }
+
+    /* Estilo para links âncora considerando a barra fixa */
+    section {
+      scroll-margin-top: 84px;
+    }
+
+    /* Animação suave para o acordeão */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease-out, opacity 0.25s ease-out;
+      opacity: 0;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 250px;
+      opacity: 1;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+  </style>
+</head>
+<body class="selection:bg-gold selection:text-forest">
+
+  <!-- =========================================================================
+       1. CABEÇALHO (Sticky Header)
+       ========================================================================= -->
+  <header class="sticky top-0 z-50 bg-forest border-b border-white/10 transition-colors">
+    <div class="max-w-content mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
+      <!-- Marca -->
+      <a href="#" class="text-xl md:text-[22px] tracking-tight font-bold">
+        <span class="text-cream">Clínica</span>
+        <span class="text-gold font-semibold ml-1">Analice Sousa</span>
+      </a>
+
+      <!-- Menu Desktop -->
+      <nav class="hidden md:flex items-center gap-8 lg:gap-10">
+        <a href="#protocolo" class="text-muted-onDark hover:text-cream text-base transition-colors">O protocolo</a>
+        <a href="#sobre" class="text-muted-onDark hover:text-cream text-base transition-colors">Sobre a Analice</a>
+        <a href="#duvidas" class="text-muted-onDark hover:text-cream text-base transition-colors">Dúvidas</a>
+        <a href="https://wa.me/5583982330820?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20consulta%20de%20harmoniza%C3%A7%C3%A3o%20%C3%ADntima." 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2.5 bg-gold hover:bg-[#b08031] text-forest font-bold px-6 py-3 rounded-control text-sm transition-all transform active:scale-95">
+          <!-- WhatsApp Icon -->
+          <svg class="w-4 h-4 text-forest stroke-current" fill="none" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 21l1.65-3.8A9 9 0 1 1 21 12c0 4.97-4.03 9-9 9a8.96 8.96 0 0 1-4.22-1.05L3 21z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1zm0 0a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/>
+          </svg>
+          Chamar no WhatsApp
+        </a>
+      </nav>
+
+      <!-- Botão Mobile -->
+      <div class="flex items-center gap-3 md:hidden">
+        <a href="https://wa.me/5583982330820" class="bg-gold text-forest p-2.5 rounded-control">
+          <svg class="w-4 h-4 stroke-current" fill="none" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 21l1.65-3.8A9 9 0 1 1 21 12c0 4.97-4.03 9-9 9a8.96 8.96 0 0 1-4.22-1.05L3 21z"/>
+          </svg>
+        </a>
+        <button id="mobile-menu-btn" aria-label="Abrir menu" class="text-cream p-2 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Gaveta Menu Mobile -->
+    <div id="mobile-menu" class="hidden md:hidden bg-forest-deep px-6 py-6 border-b border-white/10 space-y-4">
+      <a href="#protocolo" class="block text-cream text-lg py-1 mobile-link">O protocolo</a>
+      <a href="#sobre" class="block text-cream text-lg py-1 mobile-link">Sobre a Analice</a>
+      <a href="#duvidas" class="block text-cream text-lg py-1 mobile-link">Dúvidas</a>
+      <a href="#agendamento" class="block text-gold text-lg py-1 mobile-link font-medium">Agendar consulta</a>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. HERO SECTION
+       ========================================================================= -->
+  <section class="bg-forest pt-12 pb-20 md:pt-20 md:pb-28 text-cream">
+    <div class="max-w-content mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Coluna de Texto (Hero Copy) -->
+      <div class="lg:col-span-7 space-y-6 md:space-y-8">
+        <span class="inline-block text-gold text-xs md:text-sm font-bold tracking-[0.14em] uppercase">
+          Manaíra, João Pessoa
+        </span>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-[58px] leading-[1.08] font-bold text-cream tracking-tight max-w-xl">
+          Harmonização íntima masculina
+        </h1>
+        
+        <p class="text-muted-onDark text-lg sm:text-xl font-normal max-w-lg leading-relaxed">
+          Procedimento estético de consultório, com anestesia local. A consulta inicial define o protocolo e o valor.
+        </p>
+        
+        <div class="pt-2">
+          <a href="https://wa.me/5583982330820?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20consulta%20de%20harmoniza%C3%A7%C3%A3o%20%C3%ADntima." 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="inline-flex items-center gap-3 bg-gold hover:bg-[#b08031] text-forest text-base sm:text-lg font-bold px-8 py-4 rounded-control transition-all transform active:scale-95 shadow-sm">
+            <svg class="w-5 h-5 text-forest stroke-current" fill="none" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 21l1.65-3.8A9 9 0 1 1 21 12c0 4.97-4.03 9-9 9a8.96 8.96 0 0 1-4.22-1.05L3 21z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1zm0 0a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/>
+            </svg>
+            Chamar no WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Coluna da Direita (Painel Placeholder 4:5 do Consultório) -->
+      <div class="lg:col-span-5 flex justify-center lg:justify-end">
+        <div class="w-full max-w-[460px] aspect-[4/5] bg-sand rounded-card border border-sand/40 p-8 flex flex-col items-center justify-center text-center relative overflow-hidden group shadow-inner">
+          <div class="w-12 h-12 rounded-full bg-forest/5 flex items-center justify-center mb-4 text-forest/40">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+            </svg>
+          </div>
+          <p class="text-ink/60 text-xs sm:text-sm font-medium tracking-wide uppercase px-4 leading-relaxed">
+            [IMAGEM 1: consultório da Clínica Analice Sousa, vertical 4:5, 900x1125px, WebP]
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. FAIXA DE INDICADORES (Metrics Bar)
+       ========================================================================= -->
+  <section class="bg-cream border-y border-rule py-14">
+    <div class="max-w-content mx-auto px-6 md:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-rule">
+        
+        <!-- Indicador 1 -->
+        <div class="py-4 md:py-0 md:pr-10 lg:pr-12">
+          <div class="text-4xl lg:text-5xl font-bold text-gold-deep mb-2">
+            5 anos
+          </div>
+          <div class="text-muted text-base lg:text-lg">
+            de atuação em estética íntima e facial
+          </div>
+        </div>
+
+        <!-- Indicador 2 -->
+        <div class="py-6 md:py-0 md:px-10 lg:px-12">
+          <div class="text-4xl lg:text-5xl font-bold text-gold-deep mb-2">
+            1000+
+          </div>
+          <div class="text-muted text-base lg:text-lg">
+            atendimentos realizados em consultório
+          </div>
+        </div>
+
+        <!-- Indicador 3 -->
+        <div class="pt-6 md:pt-0 md:pl-10 lg:pl-12">
+          <div class="text-4xl lg:text-5xl font-bold text-gold-deep mb-2">
+            Manaíra
+          </div>
+          <div class="text-muted text-base lg:text-lg">
+            consultório próprio, com horário individual
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. BLOCO DE ACOLHIMENTO E EMPATIA
+       ========================================================================= -->
+  <section class="bg-cream py-20 md:py-32">
+    <div class="max-w-content mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-start">
+      
+      <!-- Citação de empatia -->
+      <div class="lg:col-span-6">
+        <h2 class="text-3xl sm:text-4xl lg:text-[42px] leading-[1.2] font-semibold text-ink">
+          A maioria dos homens leva meses até mandar a primeira mensagem.
+        </h2>
+      </div>
+
+      <!-- Explicação e clareza da consulta -->
+      <div class="lg:col-span-6 space-y-6 text-muted text-lg lg:text-[20px] leading-relaxed">
+        <p>
+          Se você pesquisou, leu e fechou a aba mais de uma vez, você não é exceção. Boa parte de quem chega ao consultório passou por isso antes de decidir perguntar.
+        </p>
+        <p>
+          Na consulta você não precisa justificar o motivo. Ela existe para entender a sua expectativa, examinar a região e dizer com clareza o que o protocolo alcança e o que não alcança no seu caso.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. O PROTOCOLO
+       ========================================================================= -->
+  <section id="protocolo" class="bg-white py-20 md:py-32">
+    <div class="max-w-content mx-auto px-6 md:px-10 space-y-16">
+      
+      <!-- Cabeçalho do Protocolo -->
+      <div class="max-w-3xl space-y-4">
+        <span class="text-gold text-xs sm:text-sm font-bold tracking-[0.14em] uppercase block">
+          O PROTOCOLO
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-[44px] leading-[1.15] font-bold text-ink">
+          O que é a harmonização íntima masculina
+        </h2>
+        <p class="text-muted text-lg sm:text-xl leading-relaxed pt-2">
+          Procedimento estético feito em consultório, com anestesia local. Um dos protocolos é o ácido hialurônico, aplicado em uma camada específica para aumentar a espessura, deixar a região mais relaxada e melhorar a estética local.
+        </p>
+      </div>
+
+      <!-- Duas Listas Paralelas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+        
+        <!-- Coluna 1: O que o protocolo trabalha -->
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-xs sm:text-sm font-bold tracking-[0.12em] uppercase text-ink pb-3 border-b border-rule">
+              O que o protocolo trabalha
+            </h3>
+          </div>
+          
+          <div class="space-y-8">
+            <!-- Item 1 -->
+            <div class="flex items-start gap-4">
+              <div class="mt-1 text-gold flex-shrink-0">
+                <!-- Ícone Setas Horizontais / Espessura -->
+                <svg class="w-5 h-5 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h18m-4.5-9L21 12m0 0l-4.5 4.5M21 12H3" />
+                </svg>
+              </div>
+              <div class="space-y-1">
+                <h4 class="text-lg font-semibold text-ink">Espessura</h4>
+                <p class="text-muted text-base leading-relaxed">Ganho de volume pela aplicação em camada específica.</p>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="flex items-start gap-4">
+              <div class="mt-1 text-gold flex-shrink-0">
+                <!-- Ícone Ondas Horizontais / Relaxamento -->
+                <svg class="w-5 h-5 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6h16.5" />
+                </svg>
+              </div>
+              <div class="space-y-1">
+                <h4 class="text-lg font-semibold text-ink">Região mais relaxada</h4>
+                <p class="text-muted text-base leading-relaxed">Efeito sobre a aparência e o aspecto local.</p>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="flex items-start gap-4">
+              <div class="mt-1 text-gold flex-shrink-0">
+                <!-- Ícone Brilho / Estética -->
+                <svg class="w-5 h-5 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                </svg>
+              </div>
+              <div class="space-y-1">
+                <h4 class="text-lg font-semibold text-ink">Estética local</h4>
+                <p class="text-muted text-base leading-relaxed">Contorno e harmonia da região, avaliados caso a caso.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Coluna 2: Como é feito -->
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-xs sm:text-sm font-bold tracking-[0.12em] uppercase text-ink pb-3 border-b border-rule">
+              Como é feito
+            </h3>
+          </div>
+          
+          <div class="space-y-8">
+            <!-- Item 1 -->
+            <div class="flex items-start gap-4">
+              <div class="mt-1 text-gold flex-shrink-0">
+                <!-- Ícone Seringa / Consultório -->
+                <svg class="w-5 h-5 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 4.5l-3 3m-2-2l3 3M14.5 7.5L7 15l-3 1 1-3 7.5-7.5m5-1l1-1a1.414 1.414 0 012 2l-1 1m-7 7l2 2" />
+                </svg>
+              </div>
+              <div class="space-y-1">
+                <h4 class="text-lg font-semibold text-ink">Em consultório</h4>
+                <p class="text-muted text-base leading-relaxed">Com anestesia local. Sem corte e sem internação.</p>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="flex items-start gap-4">
+              <div class="mt-1 text-gold flex-shrink-0">
+                <!-- Ícone Relógio / Tempo -->
+                <svg class="w-5 h-5 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="space-y-1">
+                <h4 class="text-lg font-semibold text-ink">Entre 40 e 60 minutos</h4>
+                <p class="text-muted text-base leading-relaxed">Tempo médio da sessão, do preparo à finalização.</p>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="flex items-start gap-4">
+              <div class="mt-1 text-gold flex-shrink-0">
+                <!-- Ícone Seta Curva / Reversível -->
+                <svg class="w-5 h-5 stroke-current" fill="none" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+                </svg>
+              </div>
+              <div class="space-y-1">
+                <h4 class="text-lg font-semibold text-ink">Material reversível</h4>
+                <p class="text-muted text-base leading-relaxed">Ácido hialurônico absorvível, com possibilidade de ser dissolvido.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Aviso Clínico com Filete Dourado à Esquerda -->
+      <div class="border-l-[3px] border-gold pl-6 py-1 max-w-4xl">
+        <p class="text-muted text-base sm:text-lg leading-relaxed">
+          A harmonização íntima é um procedimento estético e não substitui avaliação urológica. Se durante o exame aparecer dor, curvatura ou alteração de função, a orientação é investigar com urologista antes de qualquer procedimento estético.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. PERFIL DE QUEM ATENDE
+       ========================================================================= -->
+  <section id="sobre" class="bg-cream py-20 md:py-32">
+    <div class="max-w-content mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Retrato da Profissional (Placeholder 3:4) -->
+      <div class="lg:col-span-5 flex justify-center lg:justify-start">
+        <div class="w-full max-w-[420px] aspect-[3/4] bg-sand rounded-card border border-sand/40 p-8 flex flex-col items-center justify-center text-center relative overflow-hidden group shadow-inner">
+          <div class="w-12 h-12 rounded-full bg-forest/5 flex items-center justify-center mb-4 text-forest/40">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+            </svg>
+          </div>
+          <p class="text-ink/60 text-xs sm:text-sm font-medium tracking-wide leading-relaxed">
+            [IMAGEM 2: retrato da Analice Sousa no consultório, vertical 3:4, 900x1200px, WebP, alt "Analice Sousa, responsável pela Clínica Analice Sousa"]
+          </p>
+        </div>
+      </div>
+
+      <!-- Informações & Credenciais -->
+      <div class="lg:col-span-7 space-y-8">
+        <h2 class="text-3xl sm:text-4xl lg:text-[42px] leading-[1.2] font-bold text-ink">
+          Quem vai te atender
+        </h2>
+
+        <div class="space-y-5 text-muted text-base sm:text-lg leading-relaxed max-w-xl">
+          <p>
+            [TEXTO A CONFIRMAR] Primeiro parágrafo com a formação da Analice, a especialização em harmonização íntima e o que a levou a se dedicar a essa área.
+          </p>
+          <p>
+            [TEXTO A CONFIRMAR] Segundo parágrafo com a forma como ela conduz a consulta e o que o paciente pode esperar do atendimento.
+          </p>
+        </div>
+
+        <!-- Grade 2x2 de Credenciais -->
+        <div class="pt-2 border-t border-rule grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8 max-w-lg">
+          <div>
+            <div class="text-xl font-bold text-ink">5 anos</div>
+            <div class="text-muted text-sm mt-0.5">de atuação</div>
+          </div>
+          <div>
+            <div class="text-xl font-bold text-ink">1000+</div>
+            <div class="text-muted text-sm mt-0.5">atendimentos</div>
+          </div>
+          <div>
+            <div class="text-xl font-bold text-ink">[CONFIRMAR]</div>
+            <div class="text-muted text-sm mt-0.5">formação e registro profissional</div>
+          </div>
+          <div>
+            <div class="text-xl font-bold text-ink">Consultório</div>
+            <div class="text-muted text-sm mt-0.5">próprio, em Manaíra</div>
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <a href="https://wa.me/5583982330820?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20consulta%20de%20harmoniza%C3%A7%C3%A3o%20%C3%ADntima." 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="inline-flex items-center gap-3 bg-gold hover:bg-[#b08031] text-forest text-base sm:text-lg font-bold px-8 py-4 rounded-control transition-all transform active:scale-95 shadow-sm">
+            <svg class="w-5 h-5 text-forest stroke-current" fill="none" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 21l1.65-3.8A9 9 0 1 1 21 12c0 4.97-4.03 9-9 9a8.96 8.96 0 0 1-4.22-1.05L3 21z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1zm0 0a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/>
+            </svg>
+            Chamar no WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. ETAPAS DO ATENDIMENTO (Timeline no Fundo Verde)
+       ========================================================================= -->
+  <section class="bg-forest py-20 md:py-32 text-cream">
+    <div class="max-w-content mx-auto px-6 md:px-10 space-y-16">
+      
+      <h2 class="text-3xl sm:text-4xl lg:text-[44px] leading-[1.15] font-bold text-cream">
+        Do primeiro contato<br class="hidden sm:inline"> ao retorno
+      </h2>
+
+      <!-- Lista Sequencial de 4 Linhas -->
+      <div class="divide-y divide-white/10">
+        
+        <!-- Etapa 01 -->
+        <div class="py-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-baseline">
+          <div class="md:col-span-1 text-gold font-bold text-xl sm:text-2xl">01</div>
+          <div class="md:col-span-3 text-cream font-semibold text-xl sm:text-2xl">Contato</div>
+          <div class="md:col-span-8 text-muted-onDark text-base sm:text-lg leading-relaxed">
+            Você chama no WhatsApp e agenda a consulta. O retorno é direto, sem questionário longo.
+          </div>
+        </div>
+
+        <!-- Etapa 02 -->
+        <div class="py-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-baseline">
+          <div class="md:col-span-1 text-gold font-bold text-xl sm:text-2xl">02</div>
+          <div class="md:col-span-3 text-cream font-semibold text-xl sm:text-2xl">Consulta inicial</div>
+          <div class="md:col-span-8 text-muted-onDark text-base sm:text-lg leading-relaxed">
+            Exame da região e conversa sobre a sua expectativa. É aqui que sai o protocolo indicado e o valor exato do procedimento.
+          </div>
+        </div>
+
+        <!-- Etapa 03 -->
+        <div class="py-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-baseline">
+          <div class="md:col-span-1 text-gold font-bold text-xl sm:text-2xl">03</div>
+          <div class="md:col-span-3 text-cream font-semibold text-xl sm:text-2xl">Procedimento</div>
+          <div class="md:col-span-8 text-muted-onDark text-base sm:text-lg leading-relaxed">
+            Feito em consultório, com anestesia local, entre 40 e 60 minutos.
+          </div>
+        </div>
+
+        <!-- Etapa 04 -->
+        <div class="py-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-baseline">
+          <div class="md:col-span-1 text-gold font-bold text-xl sm:text-2xl">04</div>
+          <div class="md:col-span-3 text-cream font-semibold text-xl sm:text-2xl">Orientação e retorno</div>
+          <div class="md:col-span-8 text-muted-onDark text-base sm:text-lg leading-relaxed">
+            Você sai com as orientações por escrito e com o retorno agendado para acompanhar o resultado.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. DEPOIMENTOS
+       ========================================================================= -->
+  <section class="bg-cream py-20 md:py-32">
+    <div class="max-w-content mx-auto px-6 md:px-10 space-y-14">
+      
+      <!-- Cabeçalho Depoimentos -->
+      <div class="max-w-2xl space-y-3">
+        <h2 class="text-3xl sm:text-4xl lg:text-[42px] leading-[1.2] font-bold text-ink">
+          O que dizem quem já passou pela consulta
+        </h2>
+        <p class="text-muted text-base sm:text-lg">
+          Publicados com autorização por escrito. Por respeito ao sigilo, a identificação é feita apenas por iniciais e idade.
+        </p>
+      </div>
+
+      <!-- Grade Assimétrica: 1 Card Grande (Areia) + 2 Empilhados (Brancos) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Depoimento 1 (Card Maior em Fundo Sand) -->
+        <div class="lg:col-span-6 bg-sand border border-rule rounded-card p-8 sm:p-10 flex flex-col justify-between min-h-[300px]">
+          <p class="text-ink text-xl sm:text-2xl lg:text-[26px] font-semibold leading-snug">
+            “[DEPOIMENTO 1: o mais forte dos três, até 3 linhas]”
+          </p>
+          <div class="pt-8 text-muted text-base font-medium">
+            [Iniciais], [idade] anos
+          </div>
+        </div>
+
+        <!-- Coluna com Dois Depoimentos Secundários em Branco -->
+        <div class="lg:col-span-6 flex flex-col gap-6 justify-between">
+          
+          <!-- Depoimento 2 -->
+          <div class="bg-white border border-rule rounded-card p-8 flex flex-col justify-between h-full">
+            <p class="text-ink text-lg sm:text-xl font-semibold leading-normal">
+              “[DEPOIMENTO 2: até 3 linhas]”
+            </p>
+            <div class="pt-6 text-muted text-base font-medium">
+              [Iniciais], [idade] anos
+            </div>
+          </div>
+
+          <!-- Depoimento 3 -->
+          <div class="bg-white border border-rule rounded-card p-8 flex flex-col justify-between h-full">
+            <p class="text-ink text-lg sm:text-xl font-semibold leading-normal">
+              “[DEPOIMENTO 3: até 3 linhas]”
+            </p>
+            <div class="pt-6 text-muted text-base font-medium">
+              [Iniciais], [idade] anos
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. FAQ (Perguntas Frequentes com Acordeão Interativo)
+       ========================================================================= -->
+  <section id="duvidas" class="bg-white py-20 md:py-32">
+    <div class="max-w-content mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      
+      <!-- Título do FAQ (coluna esquerda) -->
+      <div class="lg:col-span-5">
+        <h2 class="text-3xl sm:text-4xl lg:text-[42px] leading-[1.2] font-bold text-ink">
+          As perguntas que mais chegam antes da consulta
+        </h2>
+      </div>
+
+      <!-- Lista de 8 Perguntas (coluna direita) -->
+      <div class="lg:col-span-7 divide-y divide-rule" id="faq-accordion">
+        
+        <!-- Pergunta 1 (Começa aberta como no screenshot 10.51.15) -->
+        <div class="faq-item active py-6 transition-colors">
+          <button type="button" class="faq-trigger w-full flex items-center justify-between text-left focus:outline-none group">
+            <span class="text-lg sm:text-xl font-semibold text-ink group-hover:text-gold-deep transition-colors">Dói?</span>
+            <span class="faq-icon text-gold text-2xl font-light leading-none transform transition-transform duration-200 ml-4 flex-shrink-0">
+              +
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p class="text-muted text-base sm:text-lg leading-relaxed pt-4">
+              O procedimento é feito com anestesia local. Você sente a manipulação, mas o desconforto é pontual e controlado durante a sessão.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div class="faq-item py-6 transition-colors">
+          <button type="button" class="faq-trigger w-full flex items-center justify-between text-left focus:outline-none group">
+            <span class="text-lg sm:text-xl font-semibold text-ink group-hover:text-gold-deep transition-colors">Quanto tempo dura o resultado?</span>
+            <span class="faq-icon text-gold text-2xl font-light leading-none transform transition-transform duration-200 ml-4 flex-shrink-0">
+              +
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p class="text-muted text-base sm:text-lg leading-relaxed pt-4">
+              Em média entre 12 e 18 meses, podendo variar de acordo com o metabolismo individual, prática de atividades físicas e resposta biológica de cada organismo.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pergunta 3 -->
+        <div class="faq-item py-6 transition-colors">
+          <button type="button" class="faq-trigger w-full flex items-center justify-between text-left focus:outline-none group">
+            <span class="text-lg sm:text-xl font-semibold text-ink group-hover:text-gold-deep transition-colors">É reversível?</span>
+            <span class="faq-icon text-gold text-2xl font-light leading-none transform transition-transform duration-200 ml-4 flex-shrink-0">
+              +
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p class="text-muted text-base sm:text-lg leading-relaxed pt-4">
+              Sim. Por ser realizado com ácido hialurônico, o procedimento pode ser totalmente revertido com a aplicação de uma enzima chamada hialuronidase, caso necessário.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pergunta 4 -->
+        <div class="faq-item py-6 transition-colors">
+          <button type="button" class="faq-trigger w-full flex items-center justify-between text-left focus:outline-none group">
+            <span class="text-lg sm:text-xl font-semibold text-ink group-hover:text-gold-deep transition-colors">Quanto tempo preciso ficar parado?</span>
+            <span class="faq-icon text-gold text-2xl font-light leading-none transform transition-transform duration-200 ml-4 flex-shrink-0">
+              +
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p class="text-muted text-base sm:text-lg leading-relaxed pt-4">
+              A rotina de trabalho habitual pode ser retomada já no dia seguinte. São recomendados apenas cuidados específicos quanto a atividades físicas intensas e abstinência sexual temporária por alguns dias.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pergunta 5 -->
+        <div class="faq-item py-6 transition-colors">
+          <button type="button" class="faq-trigger w-full flex items-center justify-between text-left focus:outline-none group">
+            <span class="text-lg sm:text-xl font-semibold text-ink group-hover:text-gold-deep transition-colors">Interfere na função?</span>
+            <span class="faq-icon text-gold text-2xl font-light leading-none transform transition-transform duration-200 ml-4 flex-shrink-0">
+              +
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p class="text-muted text-base sm:text-lg leading-relaxed pt-4">
+              Não. O produto é aplicado estritamente no plano subcutâneo e superficial, sem atingir corpos cavernosos, estruturas vasculares profundas ou feixes nervosos responsáveis pela ereção e sensibilidade.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pergunta 6 -->
+        <div class="faq-item py-6 transition-colors">
+          <button type="button" class="faq-trigger w-full flex items-center justify-between text-left focus:outline-none group">
+            <span class="text-lg sm:text-xl font-semibold text-ink group-hover:text-gold-deep transition-colors">Qual o valor?</span>
+            <span class="faq-icon text-gold text-2xl font-light leading-none transform transition-transform duration-200 ml-4 flex-shrink-0">
+              +
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p class="text-muted text-base sm:text-lg leading-relaxed pt-4">
+              O valor exato depende do volume de produto e da anatomia de cada paciente. Essa definição é feita com total transparência durante a consulta inicial presencial.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pergunta 7 -->
+        <div class="faq-item py-6 transition-colors">
+          <button type="button" class="faq-trigger w-full flex items-center justify-between text-left focus:outline-none group">
+            <span class="text-lg sm:text-xl font-semibold text-ink group-hover:text-gold-deep transition-colors">Quem pode fazer?</span>
+            <span class="faq-icon text-gold text-2xl font-light leading-none transform transition-transform duration-200 ml-4 flex-shrink-0">
+              +
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p class="text-muted text-base sm:text-lg leading-relaxed pt-4">
+              Homens adultos (maiores de 18 anos) em boas condições gerais de saúde que queiram harmonizar a estética da região íntima e que não tenham contraindicações clínicas identificadas na avaliação.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pergunta 8 -->
+        <div class="faq-item py-6 transition-colors">
+          <button type="button" class="faq-trigger w-full flex items-center justify-between text-left focus:outline-none group">
+            <span class="text-lg sm:text-xl font-semibold text-ink group-hover:text-gold-deep transition-colors">Meus dados ficam registrados?</span>
+            <span class="faq-icon text-gold text-2xl font-light leading-none transform transition-transform duration-200 ml-4 flex-shrink-0">
+              +
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p class="text-muted text-base sm:text-lg leading-relaxed pt-4">
+              Sim, em prontuário clínico individual sob sigilo profissional estrito e absoluto, em total conformidade com a LGPD e o código de ética profissional.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       10. AGENDAMENTO E MAPA
+       ========================================================================= -->
+  <section id="agendamento" class="bg-forest text-cream">
+    <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[560px]">
+      
+      <!-- Coluna da Esquerda: Informações e CTA de Contato -->
+      <div class="lg:col-span-6 px-6 py-16 sm:px-12 md:px-16 lg:py-24 flex flex-col justify-center max-w-xl mx-auto lg:mx-0 lg:ml-auto">
+        <h2 class="text-3xl sm:text-4xl lg:text-[44px] leading-[1.15] font-bold text-cream mb-6">
+          Agende sua consulta
+        </h2>
+        
+        <p class="text-muted-onDark text-base sm:text-lg leading-relaxed mb-8">
+          O agendamento é feito por WhatsApp, em horário comercial. A consulta é presencial e tem valor próprio, informado no primeiro contato.
+        </p>
+        
+        <div class="mb-12">
+          <a href="https://wa.me/5583982330820?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20consulta%20de%20harmoniza%C3%A7%C3%A3o%20%C3%ADntima." 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="inline-flex items-center gap-3 bg-gold hover:bg-[#b08031] text-forest text-base sm:text-lg font-bold px-8 py-4 rounded-control transition-all transform active:scale-95 shadow-sm">
+            <svg class="w-5 h-5 text-forest stroke-current" fill="none" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 21l1.65-3.8A9 9 0 1 1 21 12c0 4.97-4.03 9-9 9a8.96 8.96 0 0 1-4.22-1.05L3 21z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1zm0 0a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/>
+            </svg>
+            Chamar no WhatsApp
+          </a>
+        </div>
+
+        <div class="space-y-2 border-t border-white/10 pt-8">
+          <h3 class="text-cream text-lg font-bold">Clínica Analice Sousa</h3>
+          <p class="text-muted-onDark text-sm sm:text-base leading-relaxed">
+            Av. João Câncio da Silva, 1676, Sala 302, segundo andar<br>
+            Manaíra, João Pessoa, PB, 58038-000
+          </p>
+          <div class="pt-1">
+            <a href="tel:+5583982330820" class="text-gold hover:underline text-base font-medium">
+              (83) 98233-0820
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna da Direita: Mapa Interativo do Google Maps -->
+      <div class="lg:col-span-6 w-full h-[400px] lg:h-auto min-h-[420px] bg-slate-200 relative">
+        <iframe 
+          title="Localização da Clínica Analice Sousa em Manaíra, João Pessoa"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.088612986427!2d-34.83963492419515!3d-7.115715569777977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ace812328ff9f9%3A0xe54dbe4910ea09bb!2sAv.%20Jo%C3%A3o%20C%C3%A2ncio%20da%20Silva%2C%201676%20-%20Mana%C3%ADra%2C%20Jo%C3%A3o%20Pessoa%20-%20PB%2C%2058038-000!5e0!3m2!1spt-BR!2sbr!4v1727395000000!5m2!1spt-BR!2sbr" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          class="w-full h-full grayscale-[15%] contrast-[105%]">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       11. RODAPÉ (Footer)
+       ========================================================================= -->
+  <footer class="bg-forest-deep text-cream py-16 border-t border-white/5">
+    <div class="max-w-content mx-auto px-6 md:px-10 space-y-12">
+      
+      <!-- Grade de 3 Colunas -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h4 class="text-base font-semibold text-cream mb-2">Clínica Analice Sousa</h4>
+          <p class="text-muted-onDark text-sm leading-relaxed">
+            [CONFIRMAR: nome completo e registro profissional]
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-base font-semibold text-cream mb-2">Endereço</h4>
+          <p class="text-muted-onDark text-sm leading-relaxed">
+            Av. João Câncio da Silva, 1676, Sala 302<br>
+            Manaíra, João Pessoa, PB
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-base font-semibold text-cream mb-2">Contato</h4>
+          <p class="text-muted-onDark text-sm leading-relaxed">
+            <a href="tel:+5583982330820" class="hover:text-gold transition-colors">
+              (83) 98233-0820
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Linha divisória e ressalva regulatória -->
+      <div class="border-t border-white/10 pt-8 text-center md:text-left">
+        <p class="text-muted-onDark/70 text-xs sm:text-sm leading-relaxed">
+          Conteúdo informativo. A indicação e os resultados variam conforme consulta individual.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       SCRIPTS DE INTERATIVIDADE (FAQ e Menu Mobile)
+       ========================================================================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Controle do Acordeão do FAQ
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+        const icon = item.querySelector('.faq-icon');
+
+        // Se o item já começa ativo, atualiza o ícone para ×
+        if (item.classList.contains('active')) {
+          icon.textContent = '×';
+        }
+
+        trigger.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+
+          // Opcional: fechar outros ou alternar apenas este
+          faqItems.forEach(otherItem => {
+            otherItem.classList.remove('active');
+            const otherIcon = otherItem.querySelector('.faq-icon');
+            if (otherIcon) otherIcon.textContent = '+';
+          });
+
+          if (!isActive) {
+            item.classList.add('active');
+            icon.textContent = '×';
+          }
+        });
+      });
+
+      // 2. Menu Mobile Responsivo
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
